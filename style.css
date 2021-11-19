@@ -1,0 +1,39 @@
+:root {
+  --flex-dir: column;
+  --flex-dis: flex;
+  --font-f: Praise;
+}
+
+body {
+  display: var(--flex-dis);
+  flex-direction: var(--flex-dir);
+  font-family: var(--font-f), cursive;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  align-items: center;
+}
+
+#container {
+  width: auto;
+  height: auto;
+  border: 5px solid rgb(173, 61, 61);
+  display: var(--flex-dis);
+  flex-direction: var(--flex-dir);
+
+  align-self: center;
+}
+
+.gridRow {
+  display: inherit;
+}
+
+.cell {
+  width: 1em;
+  height: 1em;
+  padding: 0.5em;
+  border: 1px solid gray;
+  display: inline-block;
+}
