@@ -2,38 +2,55 @@
   --flex-dir: column;
   --flex-dis: flex;
   --font-f: Praise;
+  --align: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
   display: var(--flex-dis);
   flex-direction: var(--flex-dir);
   font-family: var(--font-f), cursive;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 h1 {
   font-size: 2em;
-  text-align: center;
-  align-items: center;
+  align-self: var(--align);
+  align-items: var(--align);
 }
 
 #container {
   width: auto;
   height: auto;
   border: 5px solid rgb(173, 61, 61);
+
   display: var(--flex-dis);
   flex-direction: var(--flex-dir);
-
-  align-self: center;
+  align-self: var(--align);
 }
 
 .gridRow {
-  display: inherit;
+  display: var(--flex-dis);
 }
 
 .cell {
   width: 1em;
   height: 1em;
   padding: 0.5em;
-  border: 1px solid gray;
+  border: 1px solid white;
   display: inline-block;
+}
+
+.btn {
+  padding: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  margin-left: 8em;
 }

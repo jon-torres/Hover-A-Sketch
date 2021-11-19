@@ -1,10 +1,11 @@
 'use strict';
 
 // DOM
-
 const container = document.getElementById('container');
+const btnEraser = document.querySelector('.btn--eraser');
 let rows = document.getElementsByClassName('gridRow');
 let cells = document.querySelectorAll('.cell');
+let newCell;
 
 // Takes (rows, columns) input and makes a grid
 const drawGrid = function (numOfRows, numOfCols) {
@@ -22,6 +23,7 @@ const drawGrid = function (numOfRows, numOfCols) {
   }
 };
 
+//  If the selected target is not the container box (div), paint it.
 const paint = function (e) {
   if (e.target !== container) {
     // console.log(event.target);
@@ -29,6 +31,14 @@ const paint = function (e) {
   }
 };
 
+const clearGrid = () => {
+  let clearTarget = document.querySelectorAll('.cell');
+  for (let i = 0; i < clearTarget.length; i++) {
+    clearTarget[i].style.backgroundColor = '';
+  }
+};
+
 drawGrid(16, 16);
 
 container.addEventListener('mouseover', paint);
+btnEraser.addEventListener('click', clearGrid);
