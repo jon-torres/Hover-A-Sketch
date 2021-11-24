@@ -2,7 +2,8 @@
   --flex-dir: column;
   --flex-dis: flex;
   --font-f: Praise;
-  --align: center;
+  --align-c: center;
+  --size-toOne: 1em;
 }
 
 * {
@@ -14,43 +15,41 @@ body {
   display: var(--flex-dis);
   flex-direction: var(--flex-dir);
   font-family: var(--font-f), cursive;
-  align-items: flex-start;
-  max-width: 1100px;
   margin: 0 auto;
 }
 
 h1 {
   font-size: 2em;
-  align-self: var(--align);
-  align-items: var(--align);
+  align-self: var(--align-c);
 }
 
 #container {
-  width: auto;
-  height: auto;
-  border: 5px solid rgb(173, 61, 61);
+  width: 500px;
+  height: 500px;
+  border: 50px solid rgb(173, 61, 61);
+  border-radius: 8px;
 
   display: var(--flex-dis);
   flex-direction: var(--flex-dir);
-  align-self: var(--align);
+  align-self: var(--align-c);
+  flex-wrap: wrap;
 }
 
 .gridRow {
   display: var(--flex-dis);
+  flex: 1;
 }
 
 .cell {
-  width: 1em;
-  height: 1em;
-  padding: 0.5em;
-  border: 1px solid white;
+  border: 1px solid #eee;
   display: inline-block;
+  flex: 1;
 }
 
 .btn {
+  align-self: var(--align-c);
   padding: 5px;
   border: 1px solid #333;
   border-radius: 5px;
   margin-bottom: 0.5em;
-  margin-left: 8em;
 }
