@@ -4,6 +4,7 @@
   --font-f: Praise;
   --align-c: center;
   --size-toOne: 1em;
+  --burgundy: rgb(174, 62, 62);
 }
 
 * {
@@ -14,25 +15,27 @@
 body {
   display: var(--flex-dis);
   flex-direction: var(--flex-dir);
-  font-family: var(--font-f), cursive;
+  /* font-family: var(--font-f), cursive; */
+  font-family: 'Estonia', cursive;
   margin: 0 auto;
+  background-color: #eee;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 5em;
   align-self: var(--align-c);
 }
 
 #container {
-  width: 500px;
-  height: 500px;
-  border: 50px solid rgb(173, 61, 61);
+  width: 600px;
+  height: 600px;
+  border: 80px solid var(--burgundy);
   border-radius: 8px;
 
   display: var(--flex-dis);
   flex-direction: var(--flex-dir);
   align-self: var(--align-c);
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .gridRow {
@@ -41,15 +44,128 @@ h1 {
 }
 
 .cell {
-  border: 1px solid #eee;
+  border: 1px solid #d3d3d3;
   display: inline-block;
   flex: 1;
 }
 
-.btn {
+.slide-container {
+  display: var(--flex-dis);
+  justify-content: var(--align-c);
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  margin-top: 8px;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 4px;
+  color: var(--burgundy);
+  font-weight: 700;
+}
+
+.btn-container {
+  display: var(--flex-dis);
+  justify-content: var(--align-c);
+}
+
+#slider-input {
+  width: 10em;
   align-self: var(--align-c);
-  padding: 5px;
-  border: 1px solid #333;
-  border-radius: 5px;
+  text-align: var(--align-c);
+  margin: 10px;
+  cursor: pointer;
+}
+
+#display_grid_size {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.btn {
+  font-family: Helvetica, sans-serif;
+  background: var(--burgundy);
+  border-radius: 999px;
+  box-shadow: var(--burgundy) 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 10px;
+
+  touch-action: manipulation;
+  word-break: break-word;
+  border: 0;
   margin-bottom: 0.5em;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--burgundy);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--burgundy);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
