@@ -127,7 +127,6 @@ paintDefault();
 toggleRandomColor();
 clearGrid();
 
-// TODO
 rangeSlider.addEventListener('input', function () {
   let gridSize = rangeSlider.value;
   gridSizeDisplay.textContent = `Grid Size: ${gridSize} x ${gridSize}`;
