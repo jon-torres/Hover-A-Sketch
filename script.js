@@ -13,7 +13,7 @@ let cells = document.querySelectorAll('.cell');
 let newCell;
 
 const randomColorGenerator = function () {
-  let hexValues = [
+  const hexValues = [
     '0',
     '1',
     '2',
@@ -37,7 +37,6 @@ const randomColorGenerator = function () {
     let y = hexValues[x];
     newColor += y;
   }
-  console.log(newColor);
   return newColor;
 };
 
